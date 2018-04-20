@@ -9,9 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import br.edu.ifal.schoolsystem.schoolsystemweb.modelo.Aluno;
+
 import br.edu.ifal.schoolsystem.schoolsystemweb.modelo.Curso;
-import br.edu.ifal.schoolsystem.schoolsystemweb.modelo.Disciplina;
 import br.edu.ifal.schoolsystem.schoolsystemweb.modelo.Nota;
 import br.edu.ifal.schoolsystem.schoolsystemweb.repositories.CursoRepository;
 import br.edu.ifal.schoolsystem.schoolsystemweb.repositories.NotaRepository;
@@ -48,8 +47,6 @@ public class SchoolsystemWebApplicationTests {
 		Nota n = new Nota();
 		n.setNotas(notas);
 		notaRepository.save(n);
-		
-		
 	}
 
 }
