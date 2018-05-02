@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -13,6 +15,7 @@ import javax.persistence.Table;
 public class Curso {
 
 	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Integer id;
 	
 	@Column
@@ -25,18 +28,15 @@ public class Curso {
 	private List<Disciplina> disciplinas;
 	
 	
-	public Curso() {
-		super();
-	}
+	
 
-	public Curso(int id, String nome) {
+	public Curso(String nome) {
 		super();
-		this.id = id;
 		this.nome = nome;
 	}
 
-	public int getId() {
-		return id;
+	public Curso() {
+		// TODO Auto-generated constructor stub
 	}
 
 	/*public void setId(int id) {

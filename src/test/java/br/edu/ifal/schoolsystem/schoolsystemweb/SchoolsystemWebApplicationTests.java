@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-
 import br.edu.ifal.schoolsystem.schoolsystemweb.modelo.Curso;
 import br.edu.ifal.schoolsystem.schoolsystemweb.modelo.Nota;
 import br.edu.ifal.schoolsystem.schoolsystemweb.repositories.CursoRepository;
@@ -28,10 +27,12 @@ public class SchoolsystemWebApplicationTests {
 	@Test
 	public void contextLoads() {
 		
-		Curso c =  new Curso(5,"Informática Básica");
+		Curso c =  new Curso();
+		c.setNome("informatica");
 		cursoRepository.save(c);
 		
-		Curso c1 = new Curso(6,"Adiministração");
+		Curso c1 = new Curso();
+		c1.setNome("Redes");
 		cursoRepository.save(c1);
 		
 		cursoRepository.findAll();
