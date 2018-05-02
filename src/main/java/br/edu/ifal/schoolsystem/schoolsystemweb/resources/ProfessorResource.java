@@ -20,7 +20,7 @@ public class ProfessorResource {
 	
 	@RequestMapping(value="carregar", method=RequestMethod.GET)
 	public String carregar() {
-		Professor e = new Professor("pwebII");
+		Professor e = new Professor("pwebII","maria");
 		professorRepository.save(e);
 		return "ok";
 	

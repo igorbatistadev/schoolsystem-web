@@ -41,9 +41,10 @@ public class Professor{
 	@Enumerated(EnumType.STRING)
 	private TipoProfessor tipoProfessor = TipoProfessor.EFETIVO;
 	
-	public Professor(String formacao) {
+	public Professor(String formacao, String nome) {
 		super();
 		this.formacao = formacao;
+		this.nome = nome;
 	}
 		
 	public Professor() {
