@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -18,7 +19,7 @@ import br.edu.ifal.schoolsystem.schoolsystemweb.modelo.Enum.TipoProfessor;
 public class Professor{
 	
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Integer id;
 	
 	@Column
@@ -51,13 +52,13 @@ public class Professor{
 	}
 	
 
-	public Integer getId() {
+	/*public Integer getId() {
 		return id;
 	}
 
 	public void setId(Integer id) {
 		this.id = id;
-	}
+	}*/
 
 	public String getNome() {
 		return nome;

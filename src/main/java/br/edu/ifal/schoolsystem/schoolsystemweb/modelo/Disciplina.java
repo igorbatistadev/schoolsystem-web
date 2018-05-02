@@ -5,6 +5,8 @@ import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
@@ -16,6 +18,7 @@ import javax.persistence.Table;
 public class Disciplina {
 	
 	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Integer id;
 	
 	@Column
@@ -35,19 +38,16 @@ public class Disciplina {
 		
 	}
 
-	public Disciplina(int id, String nome, List<Aluno> alunos, Professor professor) {
+	public Disciplina(String nome) {
 		super();
-		this.id = id;
 		this.nome = nome;
-		this.alunos = alunos;
-		this.professor = professor;
 	}
 
-	public int getId() {
+	/*public int getId() {
 		return id;
 	}
 
-	/*public void setId(int id) {
+	public void setId(int id) {
 		this.id = id;
 	}*/
 
