@@ -13,7 +13,7 @@ import br.edu.ifal.schoolsystem.schoolsystemweb.modelo.Aluno;
 import br.edu.ifal.schoolsystem.schoolsystemweb.repositories.AlunoRepository;
 
 @RestController
-@RequestMapping("/aluno")
+@RequestMapping("/api/aluno")
 public class AlunoResource {
 	
 	@Autowired
@@ -26,15 +26,15 @@ public class AlunoResource {
 		return "Ok";
 	}
 	
-	@RequestMapping(value="{id}/detalhes", method=RequestMethod.GET)
+	@RequestMapping(value="detalhes/{id}", method=RequestMethod.GET)
 	public Aluno buscar(@PathVariable("id") Integer id) {
 		return alunoRepository.getOne(id);
 	}
 	
-	@RequestMapping(value="{id}/remover", method=RequestMethod.GET)
+	@RequestMapping(value="deletar/{id}", method=RequestMethod.GET)
 	public String remover(@PathVariable("id") Integer id) {
 		alunoRepository.deleteById(id);
-		return "Aluno Removido com Sucesso";
+		return "Aluno deletado com Sucesso";
 	}
 	
 	@RequestMapping(value="/deletar/todos", method=RequestMethod.GET)
@@ -48,7 +48,7 @@ public class AlunoResource {
 		return alunoRepository.findAll();
 	}
 	
-	@RequestMapping(value="{id}/atualizar", method=RequestMethod.GET)
+	@RequestMapping(value="atualizar/{id}", method=RequestMethod.GET)
 	public String atualizar(@PathVariable("id") Integer id) {
 		Aluno a = alunoRepository.getOne(id);
 		a.setIdade(18);

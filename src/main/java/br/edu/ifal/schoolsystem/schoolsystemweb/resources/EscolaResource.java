@@ -8,12 +8,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
 import br.edu.ifal.schoolsystem.schoolsystemweb.modelo.Escola;
 import br.edu.ifal.schoolsystem.schoolsystemweb.repositories.EscolaRepository;
 
 @RestController
-@RequestMapping("/escola")
+@RequestMapping("/api/escola")
 public class EscolaResource {
 
 	@Autowired
@@ -32,9 +31,23 @@ public class EscolaResource {
 		return escolaRepository.getOne(id);
 	}
 	
+	@RequestMapping(value="/deletar/todos", method=RequestMethod.GET)
+	public String deletarTodos() {
+		escolaRepository.deleteAll();
+		return "Todas as Disciplinas foram deletados";
+	}
+	
 	@RequestMapping(value="listar/todos", method=RequestMethod.GET)
 	public List<Escola> listar(){
 		return escolaRepository.findAll();
+	}
+	
+	@RequestMapping(value="atualizar/{id}", method=RequestMethod.GET)
+	public String atualizar(@PathVariable("id") Integer id) {
+		Escola e = escolaRepository.getOne(id);
+		e.setNome("Programação Web II");
+		escolaRepository.saveAndFlush(e);
+		return "Curso atualizado";
 	}
 	
 	@RequestMapping(value="pesquisar", method=RequestMethod.GET)
