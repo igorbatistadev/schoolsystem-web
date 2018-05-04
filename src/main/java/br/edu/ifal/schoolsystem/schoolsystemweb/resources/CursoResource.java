@@ -21,7 +21,7 @@ public class CursoResource {
 	
 	@RequestMapping(value="carregar", method=RequestMethod.GET)
 	public String carregar() {
-		Curso c = new Curso("Tecnico em Informatica para WEB");
+		Curso c = new Curso("Informática");
 				
 		cursoRepository.save(c);
 		return "Ok";
@@ -32,9 +32,29 @@ public class CursoResource {
 		return cursoRepository.getOne(id);
 	}
 	
+	@RequestMapping(value="{id}/remover", method=RequestMethod.GET)
+	public String remover(@PathVariable("id") Integer id) {
+		cursoRepository.deleteById(id);
+		return "Curso Removido com Sucesso";
+	}
+	
+	@RequestMapping(value="/deletar/todos", method=RequestMethod.GET)
+	public String deletarTodos() {
+		cursoRepository.deleteAll();
+		return "Todos os cursos foram deletados";
+	}
+	
 	@RequestMapping(value="listar/todos", method=RequestMethod.GET)
 	public List<Curso> listar(){
 		return cursoRepository.findAll();
+	}
+	
+	@RequestMapping(value="{id}/atualizar", method=RequestMethod.GET)
+	public String atualizar(@PathVariable("id") Integer id) {
+		Curso c = cursoRepository.getOne(id);
+		c.setNome("Informática para Internet");
+		cursoRepository.saveAndFlush(c);
+		return "Curso atualizado";
 	}
 	
 	@RequestMapping(value="pesquisar", method=RequestMethod.GET)
