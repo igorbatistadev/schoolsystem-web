@@ -27,21 +27,22 @@ public class Curso {
 	@OneToMany
 	private List<Disciplina> disciplinas;
 	
-	
-	
-
 	public Curso(String nome) {
 		super();
 		this.nome = nome;
 	}
 
 	public Curso() {
-		// TODO Auto-generated constructor stub
+
 	}
 
-	/*public void setId(int id) {
+	public Integer getId() {
+		return id;
+	}
+	
+	public void setId(int id) {
 		this.id = id;
-	}*/
+	}
 
 	public String getNome() {
 		return nome;

@@ -49,8 +49,9 @@ public class Aluno{
 	private Endereco endereco;
 	 
 
-	public Aluno(String matricula) {
+	public Aluno(String nome, String matricula) {
 		super();
+		this.nome = nome;
 		this.matricula = matricula;
 	}
 

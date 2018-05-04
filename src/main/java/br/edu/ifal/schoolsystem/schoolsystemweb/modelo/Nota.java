@@ -32,10 +32,6 @@ public class Nota {
 	
 	@ElementCollection
 	private List<Double> notas;
-	
-	
-
-	
 
 	public Nota() {
 		
