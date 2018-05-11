@@ -12,6 +12,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
 
 import br.edu.ifal.schoolsystem.schoolsystemweb.modelo.Enum.TipoDeAluno;
 
@@ -24,9 +27,12 @@ public class Aluno{
 	private Integer id;
 	
 	@Column
+	@NotEmpty
 	private String nome;
 	
 	@Column
+	@Max(value=130, message="A idade do Aluno")
+	@Min(value=1)
 	private int idade;
 	
 	@Column
