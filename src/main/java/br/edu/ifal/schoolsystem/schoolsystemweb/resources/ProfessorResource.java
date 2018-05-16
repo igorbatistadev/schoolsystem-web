@@ -4,10 +4,12 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
 import br.edu.ifal.schoolsystem.schoolsystemweb.modelo.Professor;
 import br.edu.ifal.schoolsystem.schoolsystemweb.repositories.ProfessorRepository;
 
@@ -16,6 +18,13 @@ import br.edu.ifal.schoolsystem.schoolsystemweb.repositories.ProfessorRepository
 public class ProfessorResource {
 	@Autowired
 	ProfessorRepository professorRepository;
+	
+	
+	@RequestMapping(value = "salvar",method = RequestMethod.POST)
+	public Professor salvar(@RequestBody Professor professor) {
+		professorRepository.save(professor);
+		return professor;
+	}
 	
 	@RequestMapping(value="carregar", method=RequestMethod.GET)
 	public String carregar() {

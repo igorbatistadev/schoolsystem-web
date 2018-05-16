@@ -167,7 +167,6 @@ public class Professor{
 		return "Professor [id=" + id + ", nome=" + nome + ", idade=" + idade + ", sexo=" + sexo + ", formacao="
 				+ formacao + ", disciplinas=" + disciplinas + ", tipoProfessor=" + tipoProfessor + "]";
 	}
-	
-	
+
 
 }

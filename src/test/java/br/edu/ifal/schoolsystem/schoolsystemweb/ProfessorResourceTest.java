@@ -1,6 +1,6 @@
 package br.edu.ifal.schoolsystem.schoolsystemweb;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import java.io.IOException;
 import java.util.List;
@@ -60,5 +60,28 @@ public class ProfessorResourceTest {
 		assertEquals(tamanhoDaListaDeProfessoresEsperado, professores.size());
 	
 	}
+	
+	@Test
+	public void deveFuncionarACriacaoDeUmNovoProfessor() throws JsonParseException, JsonMappingException, IOException {
+		Professor professor = new Professor("sistema de infomação", "ted");
+		restTemplate.postForObject(BASE_PATH+"/salvar",professor, Professor.class);
+		
+		String resposta = restTemplate.getForObject(BASE_PATH + "/listar/todos",
+				String.class);
+	
+		List<Professor> professores = MAPPER.readValue(resposta,MAPPER.getTypeFactory().
+				constructCollectionLikeType(List.class, Professor.class));
+		
+		assertEquals("ted", professores.get(3).getNome());
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 }
