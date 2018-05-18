@@ -19,45 +19,27 @@
 			  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
 			    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 			      <li class="nav-item">
-			        <a class="nav-link" href="add">Cadastrar Aluno<span class="sr-only">(current)</span></a>
+			        <a class="nav-link" href="add">Cadastrar Curso<span class="sr-only">(current)</span></a>
 			      </li>
 			      <li class="nav-item">
-			        <a class="nav-link" href="listar">Lista de Alunos</a>
+			        <a class="nav-link" href="listar">Lista de Cursos</a>
 			      </li>
 			    </ul>
 			  </div>
 			</nav>
 			
 			<div class="container" style="padding-top: 10px;">
-				<h3>Adicionar aluno</h3>
-				<form method="post" action="/Aluno/add">
-					<input type="hidden" name="id" th:field="${aluno.id}"/>
+				<h3>Adicionar Curso</h3>
+				<form method="post" action="/Curso/add">
+					<input type="hidden" name="id" th:field="${curso.id}"/>			
 					<div class="form-row">
 					  <div class="col-md-12 mb-3">
 					    <label for="validationDefault01">Nome</label>
-					    <input type="text" class="form-control" id="validationDefault01" placeholder="nome" name="nome" th:field="${aluno.nome}" required>
+					    <input type="text" class="form-control" id="validationDefault01" placeholder="nome" name="nome" value="" th:field="${curso.nome}" required>
 					  </div>
 					</div>
-				  	<div class="form-row">
-					  	<div class="col-md-5 mb-3">
-					      <label for="validationDefault02">Matricula</label>
-					      <input type="text" class="form-control" id="validationDefault02" placeholder="matricula" name="matricula" th:field="${aluno.matricula}"  required>
-					    </div>
-					    <div class="col-md-2 mb-3">
-					      <label for="validationDefault03">Idade</label>
-					      <input type="number" min="1" max="100" class="form-control" id="validationDefault03" name="idade" placeholder="idade" th:field="${aluno.idade}"  required>
-					    </div>
-					    <div class="col-md-5 mb-3">
-					      <label for="validationDefault04">Sexo</label>
-						  <select class="form-control" name ="sexo" required  th:field="${aluno.sexo}" >
-						      <option value=""></option>
-						      <option value="M">Masculino</option>
-						      <option value="F">Feminino</option>
-						      <option value="">Prefiro não responder</option>
-						    </select>
-					    </div>
-			    	</div>
-				  <button class="btn btn-primary" type="submit">Salvar</button>
+				  	
+				  <button class="btn btn-primary" type="submit">Adicionar</button>
 				</form>
 			</div>
 			<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

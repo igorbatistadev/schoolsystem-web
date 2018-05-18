@@ -27,15 +27,16 @@ public class Curso {
 	@OneToMany
 	private List<Disciplina> disciplinas;
 	
+	public Curso() {
+
+	}
+
 	public Curso(String nome) {
 		super();
 		this.nome = nome;
 	}
 
-	public Curso() {
-
-	}
-
+	
 	public Integer getId() {
 		return id;
 	}

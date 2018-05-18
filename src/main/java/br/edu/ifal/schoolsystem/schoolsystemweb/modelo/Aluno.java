@@ -33,10 +33,10 @@ public class Aluno{
 	@Column
 	@Max(value=130, message="A idade do Aluno")
 	@Min(value=1)
-	private int idade;
+	private Integer idade;
 	
 	@Column
-	private char sexo;
+	private Character sexo;
 	
 	@Column
 	private String matricula;
@@ -82,19 +82,19 @@ public class Aluno{
 		this.nome = nome;
 	}
 
-	public int getIdade() {
+	public Integer getIdade() {
 		return idade;
 	}
 
-	public void setIdade(int idade) {
+	public void setIdade(Integer idade) {
 		this.idade = idade;
 	}
 
-	public char getSexo() {
+	public Character getSexo() {
 		return sexo;
 	}
 
-	public void setSexo(char sexo) {
+	public void setSexo(Character sexo) {
 		this.sexo = sexo;
 	}
 

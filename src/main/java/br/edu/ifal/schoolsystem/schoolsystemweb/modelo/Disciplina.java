@@ -43,7 +43,7 @@ public class Disciplina {
 		this.nome = nome;
 	}
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
