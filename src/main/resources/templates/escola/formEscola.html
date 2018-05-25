@@ -30,15 +30,16 @@
 			
 			<div class="container" style="padding-top: 10px;">
 				<h3>Adicionar Escola</h3>
-				<form method="post">
+				<form method="post" action="/Escola/add">
+					<input type="hidden" name="id" th:field="${escola.id}"/>
 					<div class="form-row">
 					  <div class="col-md-12 mb-3">
 					    <label for="validationDefault01">Nome</label>
-					    <input type="text" class="form-control" id="validationDefault01" placeholder="nome" name="nome" value="" required>
+					    <input type="text" class="form-control" id="validationDefault01" placeholder="nome" name="nome" value="" th:field="${escola.nome}" required>
 					  </div>
 					</div>
 				  	
-				  <button class="btn btn-primary" type="submit">Adicionar</button>
+				  <button class="btn btn-primary" type="submit">Salvar</button>
 				</form>
 			</div>
 			<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

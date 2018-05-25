@@ -40,6 +40,7 @@
 				        <th>Idade</th>
 				        <th>Sexo</th>
 				        <th>Deletar</th>
+				        <th>Editar</th>
 				      </tr>
 				    </thead>
 				    <tbody>
@@ -48,9 +49,9 @@
 				        <td><span th:text="${professor.nome}"></span></td>
 				        <td><span th:text="${professor.formacao}"></span></td>
 				        <td><span th:text="${professor.idade}"></span></td>
-				        <td><span th:text="${professor.sexo}"></span></td>				   
-				        
-				        <td><a th:href="${(#mvc.url('PC#deletar').arg(0, professor.id)).build()}"><i class="fas fa-trash-alt"></i></a></td>
+				        <td><span th:text="${professor.sexo}"></span></td>				   				        
+				        <td><a  th:href="@{/Professor/deletar(id=${professor.id})}"><i class="fas fa-trash-alt"></i></a></td>
+				        <td><a  th:href="@{/Professor/edit(id=${professor.id})}"><i class="fas fa-edit"></i></a></td>
 				      </tr>
 				    </tbody>
 				  </table>

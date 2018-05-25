@@ -26,10 +26,10 @@ public class Professor{
 	private String nome;
 	
 	@Column
-	private int idade;
+	private Integer idade;
 	
 	@Column
-	private char sexo;
+	private Character sexo;
 	
 	@Column
 	private String formacao;
@@ -52,6 +52,8 @@ public class Professor{
 		
 	}
 	
+
+
 	public Integer getId() {
 		return id;
 	}
@@ -68,20 +70,36 @@ public class Professor{
 		this.nome = nome;
 	}
 
-	public int getIdade() {
+	public Integer getIdade() {
 		return idade;
 	}
 
-	public void setIdade(int idade) {
+	public void setIdade(Integer idade) {
 		this.idade = idade;
 	}
 
-	public char getSexo() {
+	public Character getSexo() {
 		return sexo;
 	}
 
-	public void setSexo(char sexo) {
+	public void setSexo(Character sexo) {
 		this.sexo = sexo;
+	}
+
+	public String getFormacao() {
+		return formacao;
+	}
+
+	public void setFormacao(String formacao) {
+		this.formacao = formacao;
+	}
+
+	public List<Disciplina> getDisciplinas() {
+		return disciplinas;
+	}
+
+	public void setDisciplinas(List<Disciplina> disciplinas) {
+		this.disciplinas = disciplinas;
 	}
 
 	public TipoProfessor getTipoProfessor() {
@@ -90,24 +108,6 @@ public class Professor{
 
 	public void setTipoProfessor(TipoProfessor tipoProfessor) {
 		this.tipoProfessor = tipoProfessor;
-	}
-	
-	public String getFormacao() {
-		return formacao;
-	}
-	
-	public void setFormacao(String formacao) {
-		if(formacao != null) {
-			this.formacao = formacao;
-		}
-	}
-	
-	public List<Disciplina> getDisciplinas() {
-		return disciplinas;
-	}
-
-	public void setDisciplinas(List<Disciplina> disciplinas) {
-		this.disciplinas = disciplinas;
 	}
 
 	@Override

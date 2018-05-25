@@ -8,8 +8,10 @@ import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import br.edu.ifal.schoolsystem.schoolsystemweb.modelo.Aluno;
 import br.edu.ifal.schoolsystem.schoolsystemweb.modelo.Disciplina;
 import br.edu.ifal.schoolsystem.schoolsystemweb.repositories.DisciplinaRepository;
 
@@ -22,13 +24,26 @@ public class DisciplinaController {
 	@RequestMapping(value="add" ,method=RequestMethod.GET)
 	public String adicionar(ModelMap model) {
 			
+		Disciplina disciplina = new Disciplina();
+		
+		model.addAttribute("disciplina", disciplina);
+		
 		return "disciplina/formDisciplina";
 	}
 	
-	@RequestMapping(value="add" ,method=RequestMethod.POST)
+	@RequestMapping(value="/add" ,method=RequestMethod.POST)
 	public String adicionar(@Valid Disciplina disciplina, BindingResult result) {
 		disciplinarepository.save(disciplina);
 		return "redirect:/Disciplina/add";
+	}
+	
+	@RequestMapping(value ="/edit", method = RequestMethod.GET)
+	public String edit(@RequestParam("id") Integer id, ModelMap model) {
+		Disciplina disciplina = disciplinarepository.getOne(id);
+		model.addAttribute("disciplina", disciplina);
+		model.addAttribute("edit", true);
+		
+		return "disciplina/formDisciplina";
 	}
 	
 	@RequestMapping(value="/deletar")

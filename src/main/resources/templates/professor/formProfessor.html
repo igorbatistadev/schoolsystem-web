@@ -30,34 +30,34 @@
 			
 			<div class="container" style="padding-top: 10px;">
 				<h3>Adicionar professor</h3>
-				<form method="post">
+				<form method="post" action="/Professor/add">
+					<input type="hidden" name="id" th:field="${professor.id}"/>
 					<div class="form-row">
 					  <div class="col-md-12 mb-3">
 					    <label for="validationDefault01">Nome</label>
-					    <input type="text" class="form-control" id="validationDefault01" placeholder="nome" name="nome" value="" required>
+					    <input type="text" class="form-control" id="validationDefault01" placeholder="nome" name="nome" th:field="${professor.nome}" required>
 					  </div>
 					</div>
 				  	<div class="form-row">
 					  	<div class="col-md-5 mb-3">
 					      <label for="validationDefault02">Formação</label>
-					      <input type="text" class="form-control" id="validationDefault02" placeholder="formação" name="formacao" value="" required>
+					      <input type="text" class="form-control" id="validationDefault02" placeholder="formação" name="formacao" th:field="${professor.formacao}" required>
 					    </div>
 					    <div class="col-md-2 mb-3">
 					      <label for="validationDefault03">Idade</label>
-					      <input type="number" min="1" max="100" class="form-control" id="validationDefault03" name="idade" placeholder="idade" required>
+					      <input type="number" min="1" max="100" class="form-control" id="validationDefault03" name="idade" placeholder="idade" th:field="${professor.idade}" required>
 					    </div>
 					    <div class="col-md-5 mb-3">
 					      <label for="validationDefault04">Sexo</label>
-						  <select class="form-control" name ="sexo" required>
+						  <select class="form-control" name ="sexo" required th:field="${professor.sexo}">
 						      <option value=""></option>
 						      <option value="M">Masculino</option>
 						      <option value="F">Feminino</option>
 						      <option value="">Prefiro não responder</option>
 						    </select>
-					    </div>
-					    
+					    </div>	    
 			    	</div>
-				  <button class="btn btn-primary" type="submit">Adicionar</button>
+				  <button class="btn btn-primary" type="submit">Salvar</button>
 				</form>
 			</div>
 			<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

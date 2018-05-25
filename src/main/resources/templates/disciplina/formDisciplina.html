@@ -30,11 +30,12 @@
 			
 			<div class="container" style="padding-top: 10px;">
 				<h3>Adicionar Disciplina</h3>
-				<form method="post">
+				<form method="post" action="/Disciplina/add">
+					<input type="hidden" name="id" th:field="${disciplina.id}"/>
 					<div class="form-row">
 					  <div class="col-md-12 mb-3">
 					    <label for="validationDefault01">Nome</label>
-					    <input type="text" class="form-control" id="validationDefault01" placeholder="nome" name="nome" value="" required>
+					    <input type="text" class="form-control" id="validationDefault01" placeholder="nome" name="nome" value="" th:field="${disciplina.nome}" required>
 					  </div>
 					</div>
 				  	
