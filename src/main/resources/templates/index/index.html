@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+	<html xmlns:th="http://thymeleaf.org">
+		<head>
+		
+		 <style>
+        body{
+            overflow-x: hidden;
+        }
+        
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container-fluid{
+            width: 100%;
+            min-height: 80px;
+        }
+        
+        .carousel-inner img {
+          width: 100%; /* Set width to 100% */
+          margin: auto;
+          min-height:100px;
+       }
+        
+        .card{
+            margin: 10px;
+        }
+        
+        li{
+            list-style: none;
+        }
+        
+        a{
+            color: #000;
+        }
+        .jumbotron{
+            margin: 0;
+            min-height: 50px;
+        }
+        
+        .col-sm-6 a:hover{
+          text-decoration: none;
+          
+      }
+    </style>
+		
+		
+			<title>School System</title>
+			<meta charset="utf-8">
+		    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		
+		    <!-- Bootstrap CSS -->
+		    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+		</head>
+		<body>
+		
+
+<header>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		  <a class="navbar-brand" href="#">School System</a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+		  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+		    <ul class="navbar-nav">
+		      <li class="nav-item dropdown">
+		        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		          Escola
+		        </a>
+		        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+		          <a class="dropdown-item" href="escola/formEscola.html" th:href="@{/Escola/add}">Cadastrar</a>
+		          <a class="dropdown-item" href="escola/tableEscola.html" th:href="@{/Escola/listar}">Listar</a>
+		        </div>
+		      </li>
+		      <li class="nav-item dropdown">
+		        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		          Curso
+		        </a>
+		        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+		          <a class="dropdown-item" href="curso/formCurso.html" th:href="@{/Curso/add}">Cadastrar</a>
+		          <a class="dropdown-item" href="curso/tableCurso.html" th:href="@{/Curso/listar}">Listar</a>
+		        </div>
+		      </li>
+		      <li class="nav-item dropdown">
+		        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		          Disciplina
+		        </a>
+		        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+		          <a class="dropdown-item" href="disciplina/formDisciplina.html" th:href="@{/Disciplina/add}">Cadastrar</a>
+		          <a class="dropdown-item" href="disciplina/tableDisciplina.html" th:href="@{/Disciplina/listar}">Listar</a>
+		        </div>
+		      </li>
+		      <li class="nav-item dropdown">
+		        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		          Professor
+		        </a>
+		        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+		          <a class="dropdown-item" href="professor/formProfessor.html" th:href="@{/Professor/add}">Cadastrar</a>
+		          <a class="dropdown-item" href="professor/tableProfessor.html" th:href="@{/Professor/listar}">Listar</a>
+		        </div>
+		      </li>
+		      <li class="nav-item dropdown">
+		        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		          Aluno
+		        </a>
+		        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+		          <a class="dropdown-item" href="aluno/formAluno.html" th:href="@{/Aluno/add}">Cadastrar</a>
+		          <a class="dropdown-item" href="aluno/tableAluno.html" th:href="@{/Aluno/listar}">Listar</a>
+		        </div>
+		      </li>
+		    </ul>
+		  </div>
+		</nav>
+	</header>
+	    <!--   container fluid com o nosso da instituicao -->
+    <div class="container-fluid">
+       <h1><span class="fa fa-graduation-cap" style="font-size:48px;color:forestgreen; padding: 5px;"></span>School System</h1>
+    </div>
+    <!--menu, navar centralizado -->
+    
+    <!--   slide, carousel -->
+    <div id="demo" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ul class="carousel-indicators">
+            <li data-target="#demo" data-slide-to="0" class="active"></li>
+            <li data-target="#demo" data-slide-to="1"></li>
+        </ul>
+
+        <!-- The slideshow -->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img height="400" src="https://image.freepik.com/foto-gratuito/persona-che-scrive-su-un-computer-portatile_1232-639.jpg" alt="Los Angeles">
+            </div>
+            <div class="carousel-item">
+            
+                <img height="400" src="http://apexensino.com.br/wp-content/uploads/2017/04/teclado.jpg" alt="Chicago">
+            </div>
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+    </div>
+    <!--   Cards -->
+    <div class="row">
+        <div class="col">
+            <div class="card" style="width:300px">
+                <img class="card-img-top"  src="https://lpix.org/3099167/Kratos.png" alt="Card image" style="width:100%">
+                <div class="card-body">
+                    <h4 class="card-title">Lorem</h4>
+                    <p class="card-text">Lorem ipsum hac torquent vel mauris curae sagittis, dictum vestibulum adipiscing faucibus erat netus, lorem scelerisque nulla vel morbi dui. </p>
+                    <a href="#" class="btn btn-primary">See Profile</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card" style="width:300px">
+                <img class="card-img-top" src="http://www.planetmoviestore.com.br/7299-thickbox_default/guardioes-da-galaxia-thanos-.jpg" alt="Card image" style="width:100%">
+                <div class="card-body">
+                    <h4 class="card-title">Ipsum</h4>
+                    <p class="card-text">Lorem ipsum hac torquent vel mauris curae sagittis, dictum vestibulum adipiscing faucibus erat netus, lorem scelerisque nulla vel morbi dui. </p>
+                    <a href="#" class="btn btn-primary">See Profile</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card" style="width:300px">
+                <img class="card-img-top" src="https://i.pinimg.com/originals/08/7c/87/087c872debb03ed7e7b905d4ed57e116.png" alt="Card image" style="width:100%">
+                <div class="card-body">
+                    <h4 class="card-title">Lorem Ipsum</h4>
+                    <p class="card-text">Lorem ipsum hac torquent vel mauris curae sagittis, dictum vestibulum adipiscing faucibus erat netus, lorem scelerisque nulla vel morbi dui. </p>
+                    <a href="#" class="btn btn-primary">See Profile</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="jumbotron jumbotron-fluid">
+        <div class="row">
+            <div class="col-6 text-center">
+                <h4>Lorem ipsum ut auctor, lorem. </h4>
+                <li>Contato</li>
+                <li>Perguntas Frequentes</li>
+                <li>Termos e condições</li>
+            </div>
+            <aside>
+                <h4>Redes sociais</h4>
+                <li><a href="#" target="_blank"> <span class="fa fa-instagram"></span> Instagram</a></li>
+                <li><a href="#" target="_blank"><span class="fa fa-whatsapp"></span> WhatsApp</a></li>
+                <li><a href="#" target="_blank"><span class="fa fa-facebook-official"></span> Facebook</a></li>
+                <li><a href="#" target="_blank"><span class="fa fa-github"></span> GitHub</a></li>
+            </aside>
+        </div>
+    </footer>
+	
+    		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+			<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+		    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+		    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		    
+	</body>
+	</html>
+	
+	
+	

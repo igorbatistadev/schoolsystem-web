@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import br.edu.ifal.schoolsystem.schoolsystemweb.modelo.Aluno;
 import br.edu.ifal.schoolsystem.schoolsystemweb.modelo.Disciplina;
 import br.edu.ifal.schoolsystem.schoolsystemweb.repositories.DisciplinaRepository;
 

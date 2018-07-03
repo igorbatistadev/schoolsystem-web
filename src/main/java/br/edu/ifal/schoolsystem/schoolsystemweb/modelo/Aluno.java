@@ -137,6 +137,12 @@ public class Aluno{
 	public void setEndereco(Endereco endereco) {
 		this.endereco = endereco;
 	}
+	public void addDisciplina(Disciplina disciplina) {
+		if(!disciplinas.contains(disciplina)) {
+			//disciplina.addAluno(this);
+			disciplinas.add(disciplina);
+		}
+	}
 
 	@Override
 	public int hashCode() {
